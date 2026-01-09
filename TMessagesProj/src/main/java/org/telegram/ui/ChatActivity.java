@@ -35549,6 +35549,9 @@ public class ChatActivity extends BaseFragment implements
             }
         }
 
+
+        private int countToLog = 0;
+
         @Override
         public int getItemCount() {
             botInfoEmptyRow = -5;
@@ -35558,6 +35561,10 @@ public class ChatActivity extends BaseFragment implements
                     return 1;
                 }
                 return 0;
+            }
+            if(countToLog != rowCount) {
+                countToLog = rowCount;
+                Log.d("datto", "countToLog: " +countToLog);
             }
             return rowCount;
         }
